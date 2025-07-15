@@ -1,75 +1,79 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedTextInput } from "@/components/ThemedTextInput";
+import { ThemedView } from "@/components/ThemedView";
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { Avatar, Button, Chip, Text } from "@react-native-material/core";
+import { View } from "react-native";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+    <>
+      <ThemedView style={{ flex: 1, paddingTop: 65, paddingHorizontal: 15 }}>
+        <ThemedView style={{ height: "auto", display: "flex", justifyContent: "space-between", alignItems: 'center', flexDirection: 'row' }}>
+          <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+            <Avatar image={{ uri: "https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2281862025.jpg" }} />
+            <View style={{ marginLeft: 10, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", gap: 5 }}>
+              <ThemedText style={{ fontSize: 18, fontWeight: '700' }}>Goummo Bill Boris</ThemedText>
+              <Chip label="KYC Approved" color="green" variant="filled" labelStyle={{ fontSize: 11, fontWeight: '700' }} contentContainerStyle={{ padding: 9 }} />
+            </View>
+          </View>
+          <View>
+            <MaterialCommunityIcons name="bell-outline" size={32} color="#01949b" />
+          </View>
+        </ThemedView>
+        <View style={{ height: 169, backgroundColor: "#01949b", paddingTop: 15, paddingHorizontal: 15, display: "flex", borderRadius: 10, marginTop: 27, flexDirection: 'column', gap: 6.8 }}>
+          <Text style={{ color: "#fcfcfc", fontWeight: "700", fontSize: 16 }}>Smobilpay Balance</Text>
+          <View style={{ display: "flex", width: "100%", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+            <Text style={{ color: "#fcfcfc", fontWeight: "400", fontSize: 18 }}>XAF 2500</Text>
+            <Button
+              title="Fund Account"
+              variant="contained"
+              color="#01949b"
+              tintColor="#01949b"
+              disableElevation
+              contentContainerStyle={{
+                borderRadius: 60,
+                backgroundColor: "white",
+              }}
+              style={{
+                borderWidth: 0,
+                paddingHorizontal: 0,
+                paddingVertical: 0,
+              }}
+              titleStyle={{
+                fontSize: 12,
+                textTransform: 'none',
+              }}
+              leading={() => (
+                <MaterialIcons name="add-circle" color="#01949b" size={18} />
+              )}
+            />
+          </View>
+          <Text style={{ color: "#fcfcfc", fontWeight: "normal", fontSize: 14 }}>XAF 60.00 commissions</Text>
+          <View style={{ width: "100%", display: "flex", flexDirection: "row", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: 70 }}>
+            <MaterialCommunityIcons name="eye" color={"white"} size={26} />
+            <MaterialIcons name="sync" color={"white"} size={26} />
+          </View>
+        </View>
+        <ThemedView style={{ marginTop: 20 }}>
+          <ThemedTextInput
+            label="Search"
+            variant="outlined"
+          />
+        </ThemedView>
+        <ThemedView style={{ marginTop: 20 }}>
+          <ThemedText style={{fontSize: 18, fontWeight: "700"}}>Favourite Services</ThemedText>
+        </ThemedView>
+
+        <ThemedView style={{ marginTop: 20 }}>
+          
+        </ThemedView>
+
+        <ThemedView style={{ marginTop: 20 }}>
+          <ThemedText style={{fontSize: 18, fontWeight: "700"}}>Categories</ThemedText>
+        </ThemedView>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
