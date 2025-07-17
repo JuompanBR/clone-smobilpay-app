@@ -1,0 +1,54 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Airtime",
+            "image_url": ""
+        },
+        {
+            "id": 2,
+            "name": "Data & Internet",
+            "image_url": ""
+        },
+        {
+            "id": 3,
+            "name": "Electricity & Water Bills",
+            "image_url": ""
+        },
+        {
+            "id": 4,
+            "name": "Cashin",
+            "image_url": ""
+        },
+        {
+            "id": 5,
+            "name": "Cashout",
+            "image_url": ""
+        },
+        {
+            "id": 6,
+            "name": "TV/Cable",
+            "image_url": ""
+        },
+        {
+            "id": 7,
+            "name": "",
+            "image_url": ""
+        },
+        {
+            "id": 8,
+            "name": "",
+            "image_url": ""
+        },
+        {
+            "id": 9,
+            "name": "",
+            "image_url": ""
+        },
+        {
+            "id": 10,
+            "name": "",
+            "image_url": ""
+        }
+    ]
+}

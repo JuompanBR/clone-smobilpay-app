@@ -1,5 +1,4 @@
 import { useThemeColor } from '@/hooks/useThemeColor';
-import { MaterialIcons } from '@expo/vector-icons';
 import { TextInput, TextInputProps } from '@react-native-material/core';
 import React from 'react';
 
@@ -8,7 +7,7 @@ export type ThemedTextInputProps = TextInputProps & {
   darkColor?: string;
 };
 
-export function ThemedTextInput({
+function ThemedTextInput({
   lightColor,
   darkColor,
   style,
@@ -29,31 +28,30 @@ export function ThemedTextInput({
 
   return (
     <TextInput
-      label="Search"
       variant="outlined"
-      leading={() => (
-        <MaterialIcons name="search" size={30} color={textColor} />
-      )}
       color={textColor}
       placeholderTextColor={textColor}
       inputContainerStyle= {{
         backgroundColor,
+        borderWidth: 0,
         borderRadius: 8,
         borderColor: backgroundColor,
-        borderWidth: 0,
         paddingHorizontal: 10,
       }}
       hasTVPreferredFocus={false}
       inputStyle= {[
         {
+          borderWidth: 0,
           backgroundColor,
           borderRadius: 8,
           borderColor: backgroundColor,
-          color: "white"
+          color: textColor
         }
       ]}
       style={[{ backgroundColor, borderColor }]}
       {...rest}
     />
   );
-}
+};
+
+export default ThemedTextInput;
