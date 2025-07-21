@@ -1,3 +1,5 @@
+import useAppStore from "@/stores/appStore";
+import { useRouter } from "expo-router";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface AuthContextType {
@@ -10,10 +12,19 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
+    const {isLoading, setIsLoading} = useAppStore();
 
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const router = useRouter();
 
-    const login = () => setIsAuthenticated(true);
+    const login = () => {
+        setIsLoading(true);
+        setTimeout(() => {  
+            setIsAuthenticated(true)
+            setIsLoading(false);
+            router.push("/");
+        }, 0);
+    };
     const logout = () => setIsAuthenticated(false);
 
     return (

@@ -1,3 +1,5 @@
+import CategoryType from "./category";
 import Service from "./service";
 
-export { Service };
+export { CategoryType, Service };
+

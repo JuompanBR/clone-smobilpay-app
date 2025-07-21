@@ -1,0 +1,96 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "name": "Camwater BIlls/Factures",
+            "image_url": "https://pay.maviance.cm/assets/camwater.png"
+        },
+        {
+            "id": 2,
+            "name": "Eneo Bills/Postpaid",
+            "image_url": "https://pay.maviance.cm/assets/eneo.png"
+        },
+        {
+            "id": 3,
+            "name": "StartTimes",
+            "image_url": "https://pay.maviance.cm/assets/startimes.png"
+        },
+        {
+            "id": 4,
+            "name": "Douanes",
+            "image_url": "https://pay.maviance.cm/assets/douanes.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "DGI Impots",
+            "image_url": "https://pay.maviance.cm/assets/dgi.png"
+        },
+        {
+            "id": 6,
+            "name": "DSTV",
+            "image_url": "https://pay.maviance.cm/assets/dstv.png"
+        }
+    ],
+    "categories": [
+        {
+            "id": "airtime",
+            "name": "Airtime",
+            "iconSet": "Ionicons",
+            "iconName": "call"
+        },
+        {
+            "id": "data_internet",
+            "name": "Data & Internet",
+            "iconSet": "Ionicons",
+            "iconName": "swap-vertical"
+        },
+        {
+            "id": "utilities",
+            "name": "Electricity & Water Bills",
+            "iconSet": "Ionicons",
+            "iconName": "flash"
+        },
+        {
+            "id": "cashin",
+            "name": "Cashin",
+            "iconSet": "Ionicons",
+            "iconName": "arrow-down"
+        },
+        {
+            "id": "cashout",
+            "name": "Cashout",
+            "iconSet": "Ionicons",
+            "iconName": "arrow-up"
+        },
+        {
+            "id": "cable_tv",
+            "name": "Cable TV",
+            "iconSet": "Ionicons",
+            "iconName": "tv"
+        },
+        {
+            "id": "corporate_payments",
+            "name": "Corporate Payments",
+            "iconSet": "Ionicons",
+            "iconName": "business"
+        },
+        {
+            "id": "insurance",
+            "name": "Insurance",
+            "iconSet": "Ionicons",
+            "iconName": "shield-checkmark"
+        },
+        {
+            "id": "tax_government",
+            "name": "Tax & Government",
+            "iconSet": "Ionicons",
+            "iconName": "document-text"
+        },
+        {
+            "id": "associations",
+            "name": "Associations",
+            "iconSet": "Ionicons",
+            "iconName": "people"
+        }
+    ]
+}
