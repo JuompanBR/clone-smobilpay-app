@@ -9,7 +9,7 @@ function Services() {
         queryKey: ['services'],
         queryFn: async () => {
             const response = await fetch(
-                'http://192.168.1.90:3000/services',
+                'http://localhost:3000/services',
             );
             const result = await response.json();
             console.log(result);
@@ -23,7 +23,7 @@ function Services() {
 
     return (
         <>
-            <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, padding: 10 }}>
+            <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingVertical: 10 }}>
                 {data.map((service: Service) => (
                     <View key={service.id} style={{gap: 6, width: 110, height: 'auto', borderWidth: 0, borderRadius: 9, padding: 10, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <Image contentFit="fill" source={service.image_url} alt={service.name} style={{ width: 90, height: 90, borderRadius: 8 }} />

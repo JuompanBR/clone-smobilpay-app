@@ -28,9 +28,9 @@ const Login = () => {
                             </>
                         }
                     </View>
-                    <Button contentContainerStyle={{height: 42}} disabled={isLoading} onPress={() => login()} title="Login" variant="contained" color="#0b9aa9ff" titleStyle={{ color: "white", fontSize: 13 }} />
+                    <Button contentContainerStyle={{ height: 42 }} disabled={isLoading} onPress={() => login()} title="Login" variant="contained" color="#0b9aa9ff" titleStyle={{ color: "white", fontSize: 16 }} />
                     <Spacer h={4} />
-                    <Button contentContainerStyle={{height: 42}} disabled={isLoading} title="Forgot Password" variant="contained" color="#0b9aa9ff" titleStyle={{ color: "white", fontSize: 13 }} />
+                    <Button contentContainerStyle={{ height: 42 }} disabled={isLoading} title="Forgot Password" variant="contained" color="#0b9aa9ff" titleStyle={{ color: "white", fontSize: 16 }} />
                 </View>
                 <View style={{ height: 30, display: 'contents', position: "absolute", bottom: 0 }}>
 

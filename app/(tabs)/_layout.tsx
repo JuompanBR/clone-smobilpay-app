@@ -1,7 +1,7 @@
 import { HapticTab } from '@/components';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/constants';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Redirect, Tabs } from 'expo-router';
 import React from 'react';

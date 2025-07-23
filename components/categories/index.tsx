@@ -10,7 +10,7 @@ const Categories = () => {
 
         queryKey: ['categories'],
         queryFn: async () => {
-            let response = await fetch('http://192.168.1.90:3000/categories');
+            let response = await fetch('http://localhost:3000/categories');
 
             const result = await response.json();
             console.log(result);
