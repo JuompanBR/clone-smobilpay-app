@@ -2,8 +2,8 @@ import { ThemedText } from "@/components";
 import { useAppStore } from "@/stores";
 import { Service } from "@/types";
 import { useQuery } from "@tanstack/react-query";
-import { Image } from "expo-image";
-import { ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
+import ServiceComponent from "./ServiceComponent";
 
 function Services() {
 
@@ -43,10 +43,15 @@ function Services() {
         <>
             <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 5, paddingVertical: 10 }}>
                 {data.map((service: Service) => (
-                    <View key={service.serviceId} style={{ width: 140, height: 'auto', borderWidth: 0, borderRadius: 9, paddingVertical: 10, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
-                        <Image contentFit="fill" source={service.logoUrl} alt={service.title} style={{ width: 84, height: 84, borderRadius: 8 }} />
-                        <ThemedText style={{ fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 10 }}>{formatTitle(service.title)}</ThemedText>
-                    </View>
+                    <ServiceComponent 
+                    key={service.serviceId} 
+                    currency={service.currency} 
+                    description={service.description} 
+                    isCustomerPayingFee={service.isCustomerPayingFee}
+                    logoUrl={service.logoUrl}
+                    serviceId={service.serviceId}
+                    title={service.title}
+                    />
                 ))}
             </ScrollView>
         </>

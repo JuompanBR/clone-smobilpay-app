@@ -41,4 +41,4 @@ const useAuth = () => {
 };
 
 export { AuthProvider, useAuth };
-
+export default AuthProvider;
