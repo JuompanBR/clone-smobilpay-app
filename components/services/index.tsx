@@ -1,19 +1,37 @@
 import { ThemedText } from "@/components";
+import { useAppStore } from "@/stores";
 import { Service } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import { Image } from "expo-image";
 import { ScrollView, View } from "react-native";
 
 function Services() {
+
+    const appStore = useAppStore();
+
+    function formatTitle(title: string) {
+
+        let spaced = title.replace(/([a-z0-9])([A-Z])/g, '$1 $2');
+
+        spaced = spaced.replace(/\//g, ' / ');
+        spaced = spaced.replace(/\s+/g, ' ').trim();
+
+        return spaced;
+    }
+
     const { isPending, error, data, isFetching } = useQuery({
         queryKey: ['services'],
         queryFn: async () => {
+
             const response = await fetch(
                 'http://localhost:3000/services',
             );
+
             const result = await response.json();
-            console.log(result);
-            return result;
+
+            // store in the appStore
+            appStore.setServiceList(result);
+            return result?.slice(0, 9);
         },
     })
 
@@ -23,11 +41,11 @@ function Services() {
 
     return (
         <>
-            <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingVertical: 10 }}>
+            <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 5, paddingVertical: 10 }}>
                 {data.map((service: Service) => (
-                    <View key={service.id} style={{gap: 6, width: 110, height: 'auto', borderWidth: 0, borderRadius: 9, padding: 10, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
-                        <Image contentFit="fill" source={service.image_url} alt={service.name} style={{ width: 90, height: 90, borderRadius: 8 }} />
-                        <ThemedText style={{ fontSize: 15, fontWeight: '600', textAlign: 'center' }}>{service.name}</ThemedText>
+                    <View key={service.serviceId} style={{ width: 140, height: 'auto', borderWidth: 0, borderRadius: 9, paddingVertical: 10, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
+                        <Image contentFit="fill" source={service.logoUrl} alt={service.title} style={{ width: 84, height: 84, borderRadius: 8 }} />
+                        <ThemedText style={{ fontSize: 14, fontWeight: '600', textAlign: 'center', marginTop: 10 }}>{formatTitle(service.title)}</ThemedText>
                     </View>
                 ))}
             </ScrollView>

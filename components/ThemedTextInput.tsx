@@ -31,19 +31,25 @@ function ThemedTextInput({
       variant="outlined"
       color={textColor}
       placeholderTextColor={textColor}
-      inputContainerStyle= {{
-        backgroundColor,
+      inputContainerStyle={{
         borderWidth: 0,
-        borderRadius: 8,
+        borderTopRightRadius: 8,
+        borderTopLeftRadius: 8,
+        borderBottomRightRadius: 0,
+        borderBottomLeftRadius: 0,
+        backgroundColor: '#ffffff02',
         borderColor: backgroundColor,
-        paddingHorizontal: 10,
+        paddingHorizontal: 0,
       }}
       hasTVPreferredFocus={false}
-      inputStyle= {[
+      inputStyle={[
         {
           borderWidth: 0,
           backgroundColor,
-          borderRadius: 8,
+          borderTopRightRadius: 8,
+          borderTopLeftRadius: 8,
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
           borderColor: backgroundColor,
           color: textColor
         }

@@ -1,7 +1,10 @@
 interface Service {
-    id?: number,
-    name?: string,
-    image_url?: string
+    serviceId: number,
+    title: string,
+    description: string,
+    logoUrl: string,
+    currency: string,
+    isCustomerPayingFee: boolean
 };
 
 export default Service;

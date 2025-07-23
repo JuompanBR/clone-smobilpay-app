@@ -1,5 +1,5 @@
 import { ThemedTextInput } from "@/components";
-import useAppStore from "@/stores/appStore";
+import { useAppStore } from "@/stores";
 import { ActivityIndicator, Button, Spacer } from "@react-native-material/core";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "./AuthContext";

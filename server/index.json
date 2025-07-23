@@ -1,34 +1,260 @@
 {
     "services": [
         {
-            "id": 1,
-            "name": "Camwater BIlls/Factures",
-            "image_url": "https://pay.maviance.cm/assets/camwater.png"
+            "serviceId": "1001",
+            "title": "ENEO Bills / Factures",
+            "description": "CollectpaymentsforENEOelectricitybills",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/4ed8d346c9cee4293d023ae88bb739ff",
+            "isCustomerPayingFee": true
         },
         {
-            "id": 2,
-            "name": "Eneo Bills/Postpaid",
-            "image_url": "https://pay.maviance.cm/assets/eneo.png"
+            "serviceId": "1004",
+            "title": "CNPS ObligatoryContribution",
+            "description": "CNPSObligatorycontribution",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/f9b68bc9b4fe4dce7fb31292b507004a",
+            "isCustomerPayingFee": true
         },
         {
-            "id": 3,
-            "name": "StartTimes",
-            "image_url": "https://pay.maviance.cm/assets/startimes.png"
+            "serviceId": "20101",
+            "title": "CAMTEL Recharge/Topup",
+            "description": "CAMTELTopupofAirtime",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/f783fef17386ab43f2563049d1a98cb7",
+            "isCustomerPayingFee": true
         },
         {
-            "id": 4,
-            "name": "Douanes",
-            "image_url": "https://pay.maviance.cm/assets/douanes.jpeg"
+            "serviceId": "20002",
+            "title": "NEXTTEL Recharge/Topup",
+            "description": "TopupNexttelmobiledevices",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/f8fc022d4c66287132f2cce87f35f609",
+            "isCustomerPayingFee": true
         },
         {
-            "id": 5,
-            "name": "DGI Impots",
-            "image_url": "https://pay.maviance.cm/assets/dgi.png"
+            "serviceId": "20003",
+            "title": "YoomeeRecharge/Topup",
+            "description": "TopupYoomeemobilecredits",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/1fdf0c1ce3c159f31ad3c1a3744ea1b6",
+            "isCustomerPayingFee": true
         },
         {
-            "id": 6,
-            "name": "DSTV",
-            "image_url": "https://pay.maviance.cm/assets/dstv.png"
+            "serviceId": "20051",
+            "title": "MTN Recharge/Topup",
+            "description": "TopupmobiledeviceswithMTNairtime",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/c828c8a1932aaa34a5d574ae1ff3b50e",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "20052",
+            "title": "MTN MoMoCashin/Dépôt",
+            "description": "ThisserviceallowsagenttodepositmoneyintoaMobileMoneyaccount",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/6cfb605cc91ead95bb930e2580e04d75",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "20053",
+            "title": "MTN MoMoCashOut/RETRAIT",
+            "description": "TheoperationconsistsofremovemoneyinaMoMoaccount",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/6cfb605cc91ead95bb930e2580e04d75",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "20062",
+            "title": "ORANGE Recharge/Topup",
+            "description": "Orangemobilecreditssas",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/c4477ba2fba89e7eaacb36e16defb45f",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "90006",
+            "title": "Canal+",
+            "description": "Canal+MonthlySubscription",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/48ff20b1d6459929511067ac43dddcad",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "20201",
+            "title": "TopupSmobilpayviaMTNMoMo",
+            "description": "Depositaccountbalanceinsidesamecompany",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/6cfb605cc91ead95bb930e2580e04d75",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "90001",
+            "title": "AccountBalanceTransfer",
+            "description": "Transferaccountbalanceinsidesamecompany",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/598ebd5b5e40994cc2f9a711c257b434",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "90002",
+            "title": "AccountBalanceTransfer-Com",
+            "description": "Transferaccountbalancebetweencompanies",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/598ebd5b5e40994cc2f9a711c257b434",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "14021",
+            "title": "CanalPlus",
+            "description": "MonthlyRenewalforTVcable",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/48ff20b1d6459929511067ac43dddcad",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "90007",
+            "title": "CamwaterBIlls/Factures",
+            "description": "CollectionpaymentforCamwaterBills",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/7367a7161d6957023ffb6f465a0ddf56",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "30001",
+            "title": "ExpressUnionCashIn/Depot",
+            "description": "TheoperationconsistinrecharginganEUmobilemoneyaccount",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/88f8d3360e2745a39f73f126ec9508d3",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "35001",
+            "title": "MABS Cashin",
+            "description": "MABSCashin",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/9a89bc4174a5c61e15bb3201cfe06f0e",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "35002",
+            "title": "MABS Cashout",
+            "description": "MABSCashout",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/9a89bc4174a5c61e15bb3201cfe06f0e",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "35003",
+            "title": "MABS MiniStatement",
+            "description": "GetMiniAccountStatement",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/9a89bc4174a5c61e15bb3201cfe06f0e",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "35004",
+            "title": "MABS FullStatement",
+            "description": "MABSFullStatement",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/9a89bc4174a5c61e15bb3201cfe06f0e",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "90010",
+            "title": "ExpressUnionCashOut/Retrait",
+            "description": "TheoperationconsistindebitedanEUmobilemoneyaccount",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/a35aeba5263e10bf630cacea7c18180e",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "90016",
+            "title": "TopupSmobilpayviaOrangeMoney",
+            "description": "Deposit account balance inside same company",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/c4477ba2fba89e7eaacb36e16defb45f",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "20000",
+            "title": "ACAMVie",
+            "description": "ACAMVie Contribution Programmée",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/3ed95014cbbcbfcc2952ad4517777e3c",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "60002",
+            "title": "TopupSmobilpayviaSafiMoney",
+            "description": "Topup Smobilpay via SafiMoney",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/4654946a24841cf3cf8525321b59d964",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "10039",
+            "title": "ENEO Bills/Postpaid",
+            "description": "Collect payments for ENEO electricity bills Postpaid",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/4ed8d346c9cee4293d023ae88bb739ff",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "30053",
+            "title": "OrangeMoneyCash-OutfromCashCollection",
+            "description": "Withdrawal from an OrangeMoney account / Retrait d'un compte OrangeMoney",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/35c212f3eeae2ca247917f0a3abce646",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "20021",
+            "title": "StarTimes",
+            "description": "StarTimes Monthly Subscription",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/8a9c61ff5e34627bdbbb24d4381d1030",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "50052",
+            "title": "OrangeMoneyCashin/DEPOT",
+            "description": "Recharge Orange Money account with cash",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/ebef08e61555afe35b66c5077aba5b09",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "50053",
+            "title": "OrangeMoneyCashOut/RETRAIT",
+            "description": "Withdrawal from Orange Money account",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/ebef08e61555afe35b66c5077aba5b09",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "5000",
+            "title": "SABC Payment",
+            "description": "GROUPE SABC",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/754400b4c93fd308b1f60649eb37ece1",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "100325",
+            "title": "MTN MoMoCashinCongo",
+            "description": "MTN MoMo Cashin Congo by MFS",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/9266cb284ab74c3de8cd9c154e2fb53f",
+            "isCustomerPayingFee": true
+        },
+        {
+            "serviceId": "10068",
+            "title": "AirtelMoneyCashinCongo",
+            "description": "Airtel Money Cashin Congo by MFS",
+            "currency": "XAF",
+            "logoUrl": "https://core.smobilpay.staging.maviance.info/img.php/0578946f167d01bf817528382e742b05",
+            "isCustomerPayingFee": true
         }
     ],
     "categories": [
