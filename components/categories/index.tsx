@@ -1,4 +1,5 @@
 import { ThemedText } from '@/components';
+import { BACKEND_URL, beResourceMapping } from '@/constants';
 import { useAppStore } from '@/stores';
 import { CategoryType } from '@/types';
 import { useQuery } from "@tanstack/react-query";
@@ -14,7 +15,7 @@ const Categories = () => {
 
     queryKey: ['categories'],
     queryFn: async () => {
-      let response = await fetch('http://localhost:3000/categories');
+      let response = await fetch(BACKEND_URL + beResourceMapping.category);
 
       const result = await response.json();
       appStore.setCategoryList(result);

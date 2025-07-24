@@ -15,7 +15,6 @@ export default function AuthLayout() {
 
     return (
         <>
-            {id}
             <Service />
         </>
     );

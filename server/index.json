@@ -1,5 +1,5 @@
 {
-    "services": [
+    "service": [
         {
             "serviceId": "1001",
             "title": "ENEO Bills / Factures",
@@ -257,7 +257,7 @@
             "isCustomerPayingFee": true
         }
     ],
-    "categories": [
+    "category": [
         {
             "id": "airtime",
             "name": "Airtime",

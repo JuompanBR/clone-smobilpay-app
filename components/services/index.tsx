@@ -1,4 +1,5 @@
 import { ThemedText } from "@/components";
+import { BACKEND_URL, beResourceMapping } from "@/constants";
 import { useAppStore } from "@/stores";
 import { Service } from "@/types";
 import { useQuery } from "@tanstack/react-query";
@@ -24,7 +25,7 @@ function Services() {
         queryFn: async () => {
 
             const response = await fetch(
-                'http://localhost:3000/services',
+                BACKEND_URL + beResourceMapping.service,
             );
 
             const result = await response.json();

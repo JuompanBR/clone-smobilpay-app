@@ -6,7 +6,7 @@ import { View } from "react-native";
 export default function HomeScreen() {
   return (
     <>
-      <ThemedScrollView style={{ flex: 1, paddingTop: 65, paddingHorizontal: 15 }}>
+      <ThemedScrollView style={{ flex: 1, paddingHorizontal: 15 }}>
         <ThemedView style={{ height: "auto", display: "flex", justifyContent: "space-between", alignItems: 'center', flexDirection: 'row' }}>
           <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
             <Avatar size={50} image={{ uri: "https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2281862025.jpg" }} />

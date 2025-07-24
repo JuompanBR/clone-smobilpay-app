@@ -8,6 +8,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
 import { View } from 'react-native';
 import 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AuthProvider } from './(auth)/AuthContext';
 
 // Prevent splash screen from auto-hiding
@@ -15,6 +16,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const insets = useSafeAreaInsets();
 
   const [fontsLoaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
@@ -31,6 +33,7 @@ export default function RootLayout() {
   }
 
   return (
+
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
@@ -42,8 +45,8 @@ export default function RootLayout() {
               <Stack.Screen name="(tabs)" />
               <Stack.Screen name="(auth)" />
               <Stack.Screen name="+not-found" />
+              <StatusBar style="auto" />
             </Stack>
-            <StatusBar style="auto" />
           </ThemeProvider>
         </QueryClientProvider>
       </AuthProvider>
