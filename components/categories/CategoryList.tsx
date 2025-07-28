@@ -1,12 +1,12 @@
-import { ThemedText } from '@/components';
 import { BACKEND_URL, beResourceMapping } from '@/constants';
 import { useAppStore } from '@/stores';
 import { CategoryType } from '@/types';
 import { useQuery } from "@tanstack/react-query";
 import { View } from "react-native";
-import IconComponent from './IconComponent';
+import ThemedText from '../ThemedText';
+import CategoryIconComponent from './CategoryIconComponent';
 
-const Categories = () => {
+const CategoryList: React.FC = () => {
 
   const appStore = useAppStore();
 
@@ -32,7 +32,7 @@ const Categories = () => {
       {data.map((category: CategoryType) => (
         <View key={category.id} style={{ width: 100, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <View style={{ padding: 20, backgroundColor: "#00a3b225", display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '100%' }}>
-            <IconComponent category={category} key={category.id} />
+            <CategoryIconComponent category={category} key={category.id} />
           </View>
           <ThemedText style={{ textAlign: 'center', marginTop: 6, fontSize: 14 }}>{category.name}</ThemedText>
         </View>
@@ -41,4 +41,4 @@ const Categories = () => {
   );
 }
 
-export default Categories;
+export default CategoryList;

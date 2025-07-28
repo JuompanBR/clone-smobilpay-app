@@ -1,25 +1,14 @@
-import { ThemedText } from "@/components";
 import { BACKEND_URL, beResourceMapping } from "@/constants";
 import { useAppStore } from "@/stores";
 import { Service } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import { ScrollView } from "react-native";
-import ServiceComponent from "./ServiceComponent";
+import ThemedText from "../ThemedText";
+import ServiceComponent from "./ServiceItem";
 
-function Services() {
+const ServiceList: React.FC = () => {
 
     const appStore = useAppStore();
-
-    function formatTitle(title: string) {
-
-        let spaced = title.replace(/([a-z0-9])([A-Z])/g, '$1 $2');
-
-        spaced = spaced.replace(/\//g, ' / ');
-        spaced = spaced.replace(/\s+/g, ' ').trim();
-
-        return spaced;
-    }
-
     const { isPending, error, data, isFetching } = useQuery({
         queryKey: ['services'],
         queryFn: async () => {
@@ -44,14 +33,14 @@ function Services() {
         <>
             <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 5, paddingVertical: 10 }}>
                 {data.map((service: Service) => (
-                    <ServiceComponent 
-                    key={service.serviceId} 
-                    currency={service.currency} 
-                    description={service.description} 
-                    isCustomerPayingFee={service.isCustomerPayingFee}
-                    logoUrl={service.logoUrl}
-                    serviceId={service.serviceId}
-                    title={service.title}
+                    <ServiceComponent
+                        key={service.serviceId}
+                        currency={service.currency}
+                        description={service.description}
+                        isCustomerPayingFee={service.isCustomerPayingFee}
+                        logoUrl={service.logoUrl}
+                        serviceId={service.serviceId}
+                        title={service.title}
                     />
                 ))}
             </ScrollView>
@@ -59,4 +48,4 @@ function Services() {
     )
 };
 
-export default Services;
+export default ServiceList;

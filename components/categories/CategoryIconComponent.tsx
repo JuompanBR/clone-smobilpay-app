@@ -12,7 +12,7 @@ type Props = {
   category: CategoryType;
 };
 
-const IconComponent: React.FC<Props> = ({ category }: {category: CategoryType}) => {
+const CategoryIconComponent: React.FC<Props> = ({ category }: {category: CategoryType}) => {
   const SelectIconComponent = IconSets[category.iconSet];
 
   return (
@@ -20,4 +20,4 @@ const IconComponent: React.FC<Props> = ({ category }: {category: CategoryType}) 
   );
 };
 
-export default IconComponent;
+export default CategoryIconComponent;

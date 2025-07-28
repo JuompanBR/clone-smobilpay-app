@@ -1,4 +1,4 @@
-import { Categories, Services, ThemedScrollView, ThemedText, ThemedTextInput, ThemedView } from "@/components";
+import { CategoryList, ServiceList, ThemedScrollView, ThemedText, ThemedTextInput, ThemedView } from "@/components";
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Avatar, Button, Chip, Text } from "@react-native-material/core";
 import { View } from "react-native";
@@ -65,12 +65,12 @@ export default function HomeScreen() {
         </ThemedView>
         <ThemedView style={{ flexDirection: "column", flexWrap: "wrap", gap: 10, marginTop: 20 }}>
           <ThemedText style={{ fontSize: 18, fontWeight: "700" }}>Favourite Services</ThemedText>
-            <Services />
+            <ServiceList />
         </ThemedView>
         <ThemedView style={{ marginTop: 20 }}>
           <ThemedText style={{ fontSize: 18, fontWeight: "700" }}>Categories</ThemedText>
           <View style={{marginVertical: 15}}>
-            <Categories />
+            <CategoryList />
           </View>
         </ThemedView>
 
