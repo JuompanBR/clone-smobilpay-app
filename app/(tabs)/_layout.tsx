@@ -20,8 +20,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colorScheme === 'light' ? '#ddd': '#111',
-        tabBarInactiveTintColor: colorScheme === 'light' ? '#111': '#ddd',
+        tabBarActiveTintColor: colorScheme === 'light' ? '#ddd' : '#111',
+        tabBarInactiveTintColor: colorScheme === 'light' ? '#111' : '#ddd',
         headerShown: false,
         // tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -42,7 +42,7 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen
         name="index"
-        
+
         options={{
           sceneStyle: {
             paddingTop: 25,
@@ -54,7 +54,7 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="account"
-        
+
         options={{
           sceneStyle: {
             paddingTop: 25,
