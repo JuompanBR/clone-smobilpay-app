@@ -1,6 +1,5 @@
-import { Stack } from 'expo-router';
+import { Slot } from 'expo-router';
 import { useAuth } from './AuthContext';
-import Login from './login';
 
 export default function AuthLayout() {
 
@@ -10,8 +9,8 @@ export default function AuthLayout() {
   // if (isAuthenticated) {
   //   return <Redirect href="/"/>
   // }
-  
+
   return (
-    <Login />
+    <Slot />
   );
 }

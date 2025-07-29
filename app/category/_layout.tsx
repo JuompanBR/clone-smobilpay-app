@@ -1,11 +1,10 @@
 import { useAppStore } from '@/stores';
-import { formatTitle } from '@/utils';
 import { Ionicons } from '@expo/vector-icons';
 import { Stack, useRouter } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
 import { useAuth } from '../(auth)/AuthContext';
 
-export default function ServicesLayout() {
+export default function CategoriesLayout() {
 
     const { isAuthenticated } = useAuth();
     const appStore = useAppStore();
@@ -22,11 +21,8 @@ export default function ServicesLayout() {
                 name='[id]'
                 options={{
                     headerShown: true,
-                    headerTitle: formatTitle(appStore.currentService?.title ?? "Service"),
+                    headerTitle: appStore.currentCategory?.name ?? "Category",
                     headerBackVisible: true,
-                    headerTitleStyle: {
-                        fontSize: 17
-                    },
                     headerLeft: () => (
                         <Pressable onPress={() => router.back()} style={{ paddingHorizontal: 16 }}>
                             <Ionicons name="chevron-back" size={24} color={colorScheme == 'light' ? 'black' : 'white'} />

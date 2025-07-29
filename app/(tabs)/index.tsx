@@ -1,4 +1,5 @@
 import { CategoryList, ServiceList, ThemedScrollView, ThemedText, ThemedTextInput, ThemedView } from "@/components";
+import { Colors, MISC } from "@/constants";
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Avatar, Button, Chip, Text } from "@react-native-material/core";
 import { View } from "react-native";
@@ -9,25 +10,25 @@ export default function HomeScreen() {
       <ThemedScrollView style={{ flex: 1, paddingHorizontal: 15 }}>
         <ThemedView style={{ height: "auto", display: "flex", justifyContent: "space-between", alignItems: 'center', flexDirection: 'row' }}>
           <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-            <Avatar size={50} image={{ uri: "https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2281862025.jpg" }} />
+            <Avatar size={50} image={{ uri: MISC.avatarURL }} />
             <View style={{ marginLeft: 10, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", gap: 5 }}>
               <ThemedText style={{ fontSize: 15, fontWeight: '700' }}>Goummo Bill Boris</ThemedText>
               <Chip label="KYC Approved" color="green" variant="filled" labelStyle={{ fontSize: 9, fontWeight: '700' }} contentContainerStyle={{ padding: 9 }} />
             </View>
           </View>
           <View>
-            <MaterialCommunityIcons name="bell-outline" size={28} color="#0ba4b4" />
+            <MaterialCommunityIcons name="bell-outline" size={28} color={Colors.mainAppColor} />
           </View>
         </ThemedView>
-        <View style={{ height: 149, backgroundColor: "#0ba4b4", paddingTop: 14, paddingHorizontal: 15, display: "flex", borderRadius: 9, marginTop: 27, flexDirection: 'column', gap: 4 }}>
+        <View style={{ height: 149, backgroundColor: Colors.mainAppColor, paddingTop: 14, paddingHorizontal: 15, display: "flex", borderRadius: 9, marginTop: 27, flexDirection: 'column', gap: 4 }}>
           <Text style={{ color: "#fcfcfc", fontWeight: "700", fontSize: 15 }}>Smobilpay Balance</Text>
           <View style={{ display: "flex", width: "100%", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
             <Text style={{ color: "#fcfcfc", fontWeight: "400", fontSize: 16 }}>XAF 2500</Text>
             <Button
               title="Fund Account"
               variant="contained"
-              color="#0ba4b4"
-              tintColor="#0ba4b4"
+              color={Colors.mainAppColor}
+              tintColor={Colors.mainAppColor}
               disableElevation
               contentContainerStyle={{
                 borderRadius: 60,
@@ -43,7 +44,7 @@ export default function HomeScreen() {
                 textTransform: 'none',
               }}
               leading={() => (
-                <MaterialIcons name="add-circle" color="#0ba4b4" size={18} />
+                <MaterialIcons name="add-circle" color={Colors.mainAppColor} size={18} />
               )}
             />
           </View>
@@ -65,11 +66,11 @@ export default function HomeScreen() {
         </ThemedView>
         <ThemedView style={{ flexDirection: "column", flexWrap: "wrap", gap: 10, marginTop: 20 }}>
           <ThemedText style={{ fontSize: 18, fontWeight: "700" }}>Favourite Services</ThemedText>
-            <ServiceList />
+          <ServiceList />
         </ThemedView>
         <ThemedView style={{ marginTop: 20 }}>
           <ThemedText style={{ fontSize: 18, fontWeight: "700" }}>Categories</ThemedText>
-          <View style={{marginVertical: 15}}>
+          <View style={{ marginVertical: 15 }}>
             <CategoryList />
           </View>
         </ThemedView>

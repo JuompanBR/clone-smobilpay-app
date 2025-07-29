@@ -4,7 +4,8 @@ interface Service {
     description: string,
     logoUrl: string,
     currency: string,
-    isCustomerPayingFee: boolean
+    isCustomerPayingFee: boolean,
+    categoryId: string
 };
 
 export default Service;

@@ -1,10 +1,10 @@
 import { BACKEND_URL, beResourceMapping } from "@/constants";
 import { useAppStore } from "@/stores";
 import { Service } from "@/types";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { ScrollView } from "react-native";
 import ThemedText from "../ThemedText";
-import ServiceComponent from "./ServiceItem";
+import ServiceItem from "./ServiceItem";
 
 const ServiceList: React.FC = () => {
 
@@ -23,6 +23,8 @@ const ServiceList: React.FC = () => {
             appStore.setServiceList(result);
             return result?.slice(0, 9);
         },
+        staleTime: 1000 * 60 * 5,
+        placeholderData: keepPreviousData
     })
 
     if (isPending) return <ThemedText>Loading...</ThemedText>
@@ -31,9 +33,9 @@ const ServiceList: React.FC = () => {
 
     return (
         <>
-            <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 5, paddingVertical: 10 }}>
+            <ScrollView horizontal style={{ flexDirection: 'row', flexWrap: 'nowrap', width: '100%' }} showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 20, paddingVertical: 10 }}>
                 {data.map((service: Service) => (
-                    <ServiceComponent
+                    <ServiceItem
                         key={service.serviceId}
                         currency={service.currency}
                         description={service.description}
@@ -41,6 +43,7 @@ const ServiceList: React.FC = () => {
                         logoUrl={service.logoUrl}
                         serviceId={service.serviceId}
                         title={service.title}
+                        categoryId={service.categoryId}
                     />
                 ))}
             </ScrollView>

@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://192.168.1.90:3000';
+const BACKEND_URL = 'http://192.168.100.28:3000';
 const AppLists = ['service', 'category'];
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
@@ -9,6 +9,7 @@ const beResourceMapping = {
 };
 
 const Colors = {
+  mainAppColor: "#0ba4b4",
   light: {
     text: '#11181C',
     background: '#fff',
@@ -27,5 +28,9 @@ const Colors = {
   },
 };
 
-export { AppLists, BACKEND_URL, beResourceMapping, Colors };
+const MISC = {
+  avatarURL: "https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2281862025.jpg"
+}
+
+export { AppLists, BACKEND_URL, beResourceMapping, Colors, MISC };
 

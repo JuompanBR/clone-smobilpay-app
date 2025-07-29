@@ -4,12 +4,12 @@ import { CategoryType } from '@/types';
 import { useQuery } from "@tanstack/react-query";
 import { View } from "react-native";
 import ThemedText from '../ThemedText';
-import CategoryIconComponent from './CategoryIconComponent';
+import CategoryItem from './CategoryItem';
 
 const CategoryList: React.FC = () => {
 
   const appStore = useAppStore();
-
+  
   // Fetch categories
   const { isPending, error, data, isFetching } = useQuery({
 
@@ -28,14 +28,9 @@ const CategoryList: React.FC = () => {
   if (error) return <ThemedText>{'An error has occurred: ' + error.message}</ThemedText>
 
   return (
-    <View style={{ padding: 12, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%', justifyContent: 'space-between', alignItems: 'baseline', gap: 15 }}>
+    <View style={{ paddingVertical: 12, paddingHorizontal: 10, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%', justifyContent: 'space-between', alignItems: 'baseline', gap: 15 }}>
       {data.map((category: CategoryType) => (
-        <View key={category.id} style={{ width: 100, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <View style={{ padding: 20, backgroundColor: "#00a3b225", display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '100%' }}>
-            <CategoryIconComponent category={category} key={category.id} />
-          </View>
-          <ThemedText style={{ textAlign: 'center', marginTop: 6, fontSize: 14 }}>{category.name}</ThemedText>
-        </View>
+        <CategoryItem category={category} key={category.id}/>
       ))}
     </View>
   );

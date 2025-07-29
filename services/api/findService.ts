@@ -7,7 +7,8 @@ const findService = async ({ queryParams }: { queryParams: Record<string, any> }
     }).join("&");
 
     const response = await fetch(BACKEND_URL + beResourceMapping.service + "?" + queryString);
-    return await response.json();
+    const result = await response.json();
+    return await result[0];
 };
 
 export default findService;

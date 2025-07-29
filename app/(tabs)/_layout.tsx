@@ -1,8 +1,7 @@
-import { HapticTab } from '@/components';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
@@ -10,7 +9,7 @@ import { useAuth } from '../(auth)/AuthContext';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  
+
   const { isAuthenticated } = useAuth();
 
   if (isAuthenticated == false) {
@@ -21,9 +20,10 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: colorScheme === 'light' ? '#ddd': '#111',
+        tabBarInactiveTintColor: colorScheme === 'light' ? '#111': '#ddd',
         headerShown: false,
-        tabBarButton: HapticTab,
+        // tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
@@ -31,22 +31,59 @@ export default function TabLayout() {
             position: 'absolute',
           },
           default: {
-            backgroundColor: "#0ba4b4"
+            display: 'flex',
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: Colors.mainAppColor,
+            height: 50,
+            paddingTop: 10
           },
         }),
       }}>
       <Tabs.Screen
         name="index"
+        
         options={{
+          sceneStyle: {
+            paddingTop: 25,
+            backgroundColor: Colors[colorScheme ?? 'light'].background
+          },
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons color={color} size={28} name="home" />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="account"
+        
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          sceneStyle: {
+            paddingTop: 25,
+            backgroundColor: Colors[colorScheme ?? 'light'].background
+          },
+          title: 'Account',
+          tabBarIcon: ({ color }) => <Ionicons color={color} size={28} name="person-circle" />,
+        }}
+      />
+      <Tabs.Screen
+        name="history"
+        options={{
+          title: 'History',
+          sceneStyle: {
+            paddingTop: 25,
+            backgroundColor: Colors[colorScheme ?? 'light'].background
+          },
+          tabBarIcon: ({ color }) => <Ionicons size={22} name="bar-chart" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="more"
+        options={{
+          title: 'More',
+          sceneStyle: {
+            paddingTop: 25,
+            backgroundColor: Colors[colorScheme ?? 'light'].background
+          },
+          tabBarIcon: ({ color }) => <Ionicons size={22} name="ellipsis-vertical" color={color} />,
         }}
       />
     </Tabs>

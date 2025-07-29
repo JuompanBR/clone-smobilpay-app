@@ -1,4 +1,4 @@
-import { CategoryIconComponent, CategoryList } from "./categories";
+import { CategoryIconComponent, CategoryItem, CategoryList } from "./categories";
 import HapticTab from "./HapticTab";
 import ParallaxScrollView from "./ParallaxScrollView";
 import { ServiceItem, ServiceList } from "./services";
@@ -9,6 +9,6 @@ import ThemedView from "./ThemedView";
 import ShimmerImage from "./ui/ShimmerImage";
 
 export {
-    CategoryIconComponent, CategoryList, HapticTab, ParallaxScrollView, ServiceItem, ServiceList, ShimmerImage, ThemedScrollView, ThemedText,
+    CategoryIconComponent, CategoryItem, CategoryList, HapticTab, ParallaxScrollView, ServiceItem, ServiceList, ShimmerImage, ThemedScrollView, ThemedText,
     ThemedTextInput, ThemedView
 };

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { DimensionValue } from "react-native";
 import ShimmerPlaceholder from 'react-native-shimmer-placeholder';
 
-const ShimmerImage = ({ imgURL, title, width = 84, height = 83 }: { imgURL: string, title: string, width?: DimensionValue, height?: DimensionValue }) => {
+const ShimmerImage: React.FC<{ imgURL: string, title: string, width?: DimensionValue, height?: DimensionValue }> = ({ imgURL, title, width = 83, height = 83 }) => {
     const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
     return (
@@ -21,7 +21,8 @@ const ShimmerImage = ({ imgURL, title, width = 84, height = 83 }: { imgURL: stri
                 style={{ width: width, height: height, borderRadius: 8 }}
                 transition={300}
                 onLoad={() => setImageIsLoaded(true)}
-                 />
+                cachePolicy="memory-disk"
+            />
         </ShimmerPlaceholder>
     );
 };
