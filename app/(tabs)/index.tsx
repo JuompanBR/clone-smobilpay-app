@@ -2,9 +2,12 @@ import { CategoryList, ServiceList, ThemedScrollView, ThemedText, ThemedTextInpu
 import { Colors, MISC } from "@/constants";
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Avatar, Button, Chip, Text } from "@react-native-material/core";
+import { useRouter } from "expo-router";
 import { View } from "react-native";
 
 export default function HomeScreen() {
+  const router = useRouter();
+  
   return (
     <>
       <ThemedScrollView style={{ flex: 1, paddingHorizontal: 15 }}>
@@ -46,6 +49,7 @@ export default function HomeScreen() {
               leading={() => (
                 <MaterialIcons name="add-circle" color={Colors.mainAppColor} size={18} />
               )}
+              onPress={() => router.push("/fundAccount")}
             />
           </View>
           <Text style={{ color: "#fcfcfc", fontWeight: "normal", fontSize: 14 }}>XAF 60.00 commissions</Text>

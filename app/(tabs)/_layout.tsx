@@ -3,7 +3,6 @@ import { Colors } from '@/constants';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Redirect, Tabs } from 'expo-router';
-import React from 'react';
 import { Platform } from 'react-native';
 import { useAuth } from '../(auth)/AuthContext';
 

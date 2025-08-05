@@ -1,7 +1,7 @@
 import { CategoryType, Service } from '@/types';
 import { create } from 'zustand';
 
-interface appStoreState {
+interface appStoreType {
     isLoading: boolean;
     setIsLoading: (isLoading: boolean) => void;
     serviceList: Service[];
@@ -15,7 +15,7 @@ interface appStoreState {
     push: (varType: 'service' | 'category', newList: Service[] | CategoryType[]) => void;
 };
 
-const useAppStore = create<appStoreState>((set, get) => ({
+const useAppStore = create<appStoreType>((set, get) => ({
     isLoading: false,
 
     serviceList: [],

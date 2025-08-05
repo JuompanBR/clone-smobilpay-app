@@ -6,7 +6,7 @@ export type ThemedScrollViewProps = ViewProps & {
   darkColor?: string;
 };
 
-function ThemedScrollView({ style, lightColor, darkColor, ...otherProps }: ThemedScrollViewProps) {
+const ThemedScrollView: React.FC<ThemedScrollViewProps> = ({ style, lightColor, darkColor, ...otherProps }) => {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
   return <ScrollView style={[{ backgroundColor }, style]} {...otherProps} />;

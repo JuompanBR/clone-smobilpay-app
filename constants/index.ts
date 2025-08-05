@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://192.168.100.28:3000';
+const BACKEND_URL = 'http://localhost:3000';
 const AppLists = ['service', 'category'];
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';

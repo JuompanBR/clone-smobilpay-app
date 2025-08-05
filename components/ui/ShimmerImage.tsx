@@ -18,7 +18,7 @@ const ShimmerImage: React.FC<{ imgURL: string, title: string, width?: DimensionV
                 contentFit="cover"
                 source={imgURL}
                 alt={title}
-                style={{ width: width, height: height, borderRadius: 8 }}
+                style={{ width: width, height: height, borderRadius: 8, borderWidth: 1, borderColor: "#eee" }}
                 transition={300}
                 onLoad={() => setImageIsLoaded(true)}
                 cachePolicy="memory-disk"
