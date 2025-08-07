@@ -1,5 +1,5 @@
 interface User {
-    id: string | number,
+    id: number,
     balance: number,
     commissions: number,
     firstName: string,

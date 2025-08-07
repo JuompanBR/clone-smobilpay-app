@@ -20,6 +20,10 @@ export default function HomeScreen() {
   const { data, isError, isFetching, refetch: refetchAccountData } = useAccountDataQuery({ url: BACKEND_URL + beResourceMapping.user, userId: 102056 });
 
   const reloadAccountData = async () => {
+
+    if (isFetching) {
+      return;
+    }
     appStore.setIsLoading(true);
     setDetailsVisible(false);
     // API Call here
@@ -61,13 +65,13 @@ export default function HomeScreen() {
         <View style={{ height: 149, backgroundColor: Colors.mainAppColor, paddingTop: 14, paddingHorizontal: 15, display: "flex", borderRadius: 9, marginTop: 27, flexDirection: 'column', gap: 4 }}>
           <Text style={{ color: "#fcfcfc", fontWeight: "700", fontSize: 15 }}>Smobilpay Balance</Text>
           <View style={{ display: "flex", width: "100%", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-            <ShimmerPlaceholder
+            {/* <ShimmerPlaceholder
               LinearGradient={LinearGradient}
               style={{ height: 21, borderRadius: 5, marginBottom: 0 }}
-              visible={appStore.isLoading === true}
-              shimmerColors={["#ffffff66"]}>
+              visible={isFetching === false}
+              shimmerColors={["#ffffff66"]}> */}
               <Text accessible={true} style={{ color: "#fcfcfc", fontWeight: "500", fontSize: 16 }}>{detailsVisible == false ? '******' : formatAmount(data?.balance ?? 0)}</Text>
-            </ShimmerPlaceholder>
+            {/* </ShimmerPlaceholder> */}
             <Button
               title="Fund Account"
               variant="contained"
@@ -93,19 +97,18 @@ export default function HomeScreen() {
               onPress={() => router.push("/fundAccount")}
             />
           </View>
-          <ShimmerPlaceholder
+          {/* <ShimmerPlaceholder
             LinearGradient={LinearGradient}
             style={{ height: 18, borderRadius: 4, marginBottom: 0 }}
-            visible={appStore.isLoading === false}
-            shimmerColors={Colors.shimmerColors}
-            width={'30%'}
-          >
+            visible={isFetching === false}
+            shimmerColors={['#ffffff66']}
+          > */}
             <Text style={{ color: "#fcfcfc", fontWeight: "normal", fontSize: 14 }}>
               {
                 (detailsVisible == false) ? '******' : formatAmount(data?.commissions ?? 0)
               } commissions
             </Text>
-          </ShimmerPlaceholder>
+          {/* </ShimmerPlaceholder> */}
 
           <View style={{ width: "100%", display: "flex", flexDirection: "row", flex: 1, justifyContent: "flex-end", alignItems: "center", gap: 70 }}>
             <Pressable disabled={appStore.isLoading} onPress={() => setDetailsVisible(!detailsVisible)}>

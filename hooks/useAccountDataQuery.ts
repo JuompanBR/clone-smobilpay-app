@@ -1,10 +1,7 @@
 import { getAccountData } from "@/services";
-import { useAppStore } from "@/stores";
 import { useQuery } from "@tanstack/react-query";
 
-const useAccountDataQuery = ({ url, userId }: { url: string, userId: string | number }) => {
-
-    const appStore = useAppStore();
+const useAccountDataQuery = ({ url, userId }: { url: string, userId: number }) => {
 
     return useQuery({
         queryKey: ['accountData' + userId],

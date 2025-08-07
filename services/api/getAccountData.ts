@@ -8,7 +8,6 @@ const getAccountData = async ({ url, userId }: { url: string, userId: string | n
 
     try {
         const response = await fetch(cleanedURL);
-
         // Resource not found is not found
         if (response.status == HTTPCodes.notFound) {
             console.log("Not found resource");
@@ -20,9 +19,7 @@ const getAccountData = async ({ url, userId }: { url: string, userId: string | n
         }
 
         const result = await response.json() as User;
-        
         return result;
-
     } catch (e) {
         throw new Error(`getAccountData failed: ${(e as Error).message}`);
     }
