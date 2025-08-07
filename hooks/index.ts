@@ -1,4 +1,6 @@
+import useAccountDataQuery from "./useAccountDataQuery";
 import useFindService from "./useFindService";
 import useStringCallback from "./useStringCallback";
 
-export { useFindService, useStringCallback };
+export { useAccountDataQuery, useFindService, useStringCallback };
+

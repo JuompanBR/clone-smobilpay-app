@@ -1,3 +1,4 @@
+import { Colors } from '@/constants';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { TextInput, TextInputProps } from '@react-native-material/core';
 import React from 'react';
@@ -18,11 +19,11 @@ function ThemedTextInput({
     'background'
   );
   const textColor = useThemeColor(
-    { light: '#000', dark: '#fff' },
+    { light: Colors.mainAppColor, dark: Colors.mainAppColor },
     'text'
   );
   const borderColor = useThemeColor(
-    { light: '#ccc', dark: '#444' },
+    { light: Colors.mainAppColor, dark: Colors.mainAppColor },
     'text'
   );
 

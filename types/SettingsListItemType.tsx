@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
-import { StyleProp, ViewStyle } from "react-native";
+import { GestureResponderEvent } from "react-native";
 
 interface SettingsListItemType {
-    leadingIcon: (props: { color: string; style: StyleProp<ViewStyle>; }) => ReactNode,
+    leadingIcon: ReactNode,
     title: string,
-    description: string
+    description?: string,
+    onClick?: (event: GestureResponderEvent) => void
 };
 
 export default SettingsListItemType;

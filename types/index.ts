@@ -1,6 +1,6 @@
-import CategoryType from "./category";
-import Service from "./service";
+import CategoryType from "./CategoryType";
+import Service from "./Service";
 import SettingsListItemType from './SettingsListItemType';
+import User from "./User";
 
-export { CategoryType, Service, SettingsListItemType };
-
+export type { CategoryType, Service, SettingsListItemType, User };

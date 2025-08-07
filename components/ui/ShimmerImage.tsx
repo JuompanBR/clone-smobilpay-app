@@ -1,3 +1,4 @@
+import { Colors } from "@/constants";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
@@ -12,16 +13,16 @@ const ShimmerImage: React.FC<{ imgURL: string, title: string, width?: DimensionV
             LinearGradient={LinearGradient}
             style={{ width: width, height: height, borderRadius: 8 }}
             visible={imageIsLoaded}
-            shimmerColors={['#2e2e2e', '#3c3c3c', '#2e2e2e']}
+            shimmerColors={Colors.shimmerColors}
         >
             <Image
                 contentFit="cover"
                 source={imgURL}
                 alt={title}
                 style={{ width: width, height: height, borderRadius: 8, borderWidth: 1, borderColor: "#eee" }}
-                transition={300}
+                transition={0}
                 onLoad={() => setImageIsLoaded(true)}
-                cachePolicy="memory-disk"
+                cachePolicy="disk"
             />
         </ShimmerPlaceholder>
     );

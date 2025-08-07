@@ -2,19 +2,20 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { Redirect, Tabs } from 'expo-router';
+import { Tabs, useRouter } from 'expo-router';
 import { Platform } from 'react-native';
 import { useAuth } from '../(auth)/AuthContext';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
-  const { isAuthenticated } = useAuth();
 
-  if (isAuthenticated == false) {
-    console.log("User is not authenticated...");
-    return <Redirect href="/login" />
-  }
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+  // if (isAuthenticated == false) {
+  //   console.log("User is not authenticated...");
+  //   return <Redirect href="/login" />
+  // }
 
   return (
     <Tabs
@@ -24,6 +25,7 @@ export default function TabLayout() {
         headerShown: false,
         // tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
+        headerStatusBarHeight: 0,
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -44,7 +46,7 @@ export default function TabLayout() {
 
         options={{
           sceneStyle: {
-            paddingTop: 25,
+            paddingTop: 19,
             backgroundColor: Colors[colorScheme ?? 'light'].background
           },
           title: 'Home',
@@ -56,11 +58,19 @@ export default function TabLayout() {
 
         options={{
           sceneStyle: {
-            paddingTop: 25,
+            paddingTop: 0,
             backgroundColor: Colors[colorScheme ?? 'light'].background
           },
           title: 'Account',
           tabBarIcon: ({ color }) => <Ionicons color={color} size={28} name="person-circle" />,
+          headerShown: true,
+          headerTitle: "Account",
+          headerTitleStyle: {
+            color: colorScheme == 'dark' ? 'black' : '#aaa',
+          },
+          headerStyle: {
+            backgroundColor: Colors.mainAppColor,
+          }
         }}
       />
       <Tabs.Screen
@@ -68,8 +78,16 @@ export default function TabLayout() {
         options={{
           title: 'History',
           sceneStyle: {
-            paddingTop: 25,
-            backgroundColor: Colors[colorScheme ?? 'light'].background
+            paddingTop: 0,
+            backgroundColor: Colors[colorScheme ?? 'light'].background,
+          },
+          headerShown: true,
+          headerTitle: "History",
+          headerTitleStyle: {
+            color: colorScheme == 'dark' ? 'black' : '#aaa',
+          },
+          headerStyle: {
+            backgroundColor: Colors.mainAppColor,
           },
           tabBarIcon: ({ color }) => <Ionicons size={22} name="bar-chart" color={color} />,
         }}
@@ -79,8 +97,16 @@ export default function TabLayout() {
         options={{
           title: 'More',
           sceneStyle: {
-            paddingTop: 25,
+            paddingTop: 0,
             backgroundColor: Colors[colorScheme ?? 'light'].background
+          },
+          headerShown: true,
+          headerTitle: "More",
+          headerTitleStyle: {
+            color: colorScheme == 'dark' ? 'black' : '#aaa',
+          },
+          headerStyle: {
+            backgroundColor: Colors.mainAppColor,
           },
           tabBarIcon: ({ color }) => <Ionicons size={22} name="ellipsis-vertical" color={color} />,
         }}

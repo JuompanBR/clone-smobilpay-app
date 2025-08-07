@@ -20,7 +20,25 @@ function formatTitle(title: string) {
  */
 function respFont(fontSize: number, fontScale: number) {
     return fontSize / fontScale;
-}
+};
 
-export { formatTitle, respFont };
+function validateAmount(amount: string) {
+    const testAmount = parseInt(amount);
+
+    return (testAmount >= 100) && (testAmount % 50 == 0);
+};
+
+/**
+ * Use this method to format an amount as for example 14,500.50
+ */
+function formatAmount(amount: number, currency: string = 'XAF') {
+  return currency + ' ' + amount.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+};
+
+
+
+export { formatAmount, formatTitle, respFont, validateAmount };
 

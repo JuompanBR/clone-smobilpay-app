@@ -22,7 +22,6 @@ const RegisteredNumbers = ({ values, disabled, onChoiceMade }: { values: string[
               color={Colors.mainAppColor}
               style={{ borderWidth: 1, borderColor: '#aaa', borderRadius: 3, marginVertical: 8 }}
               labelStyle={{ fontSize: 16.7, color: 'white' }}
-              labelVariant='headlineLarge'
               mode="android"
               position="trailing"
               disabled={disabled}

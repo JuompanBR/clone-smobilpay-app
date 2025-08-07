@@ -1,18 +1,23 @@
-import { CategoryType, Service } from '@/types';
+import { CategoryType, Service, User } from '@/types';
 import { create } from 'zustand';
 
 interface appStoreType {
     isLoading: boolean;
-    setIsLoading: (isLoading: boolean) => void;
     serviceList: Service[];
     categoryList: CategoryType[];
     currentService?: Service | null;
     currentCategory?: CategoryType | null;
+
     setServiceList: (newValue: Service[]) => void;
     setCategoryList: (newValue: CategoryType[]) => void;
     setCurrentService: (newValue: Service) => void;
     setCurrentCategory: (newValue: CategoryType) => void;
     push: (varType: 'service' | 'category', newList: Service[] | CategoryType[]) => void;
+    setIsLoading: (isLoading: boolean) => void;
+    
+    // Account defined settings
+    accountData: User | null | {};
+    setAccountData: (newData: User) => void;
 };
 
 const useAppStore = create<appStoreType>((set, get) => ({
@@ -25,6 +30,8 @@ const useAppStore = create<appStoreType>((set, get) => ({
     currentService: null,
 
     currentCategory: null,
+
+    accountData: {},
 
     setIsLoading: (newValue) => set({ isLoading: newValue }),
 
@@ -49,6 +56,11 @@ const useAppStore = create<appStoreType>((set, get) => ({
                 throw new Error("Please specify a valid list to push the data into.");
         }
         return;
+    },
+
+    setAccountData: (newValue) => {
+        const state = get();
+        state.accountData = newValue;
     }
 }));
 

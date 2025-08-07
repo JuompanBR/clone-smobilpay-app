@@ -1,3 +1,4 @@
-import { formatTitle } from "./misc";
+import { formatAmount, formatTitle, validateAmount } from "./misc";
 
-export { formatTitle };
+export { formatAmount, formatTitle, validateAmount };
+

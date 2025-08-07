@@ -350,5 +350,14 @@
             "iconSet": "Ionicons",
             "iconName": "people"
         }
+    ],
+    "user": [
+        {
+            "id": 102056,
+            "balance": 2500,
+            "commissions": 60,
+            "firstName": "Juompan",
+            "lastName": "Bill Boris"
+        }
     ]
 }
